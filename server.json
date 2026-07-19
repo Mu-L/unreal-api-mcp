@@ -20,7 +20,7 @@
       "environmentVariables": [
         {
           "name": "UNREAL_VERSION",
-          "description": "Unreal Engine version to serve: 5.5, 5.6, or 5.7 (default: auto-detect or 5.7)",
+          "description": "Unreal Engine version to serve, e.g. 5.7 or 5.8 (default: auto-detect or 5.8)",
           "isRequired": false,
           "format": "string",
           "isSecret": false

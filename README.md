@@ -7,7 +7,7 @@
 [![MCP Registry](https://img.shields.io/badge/MCP-Registry-green)](https://registry.modelcontextprotocol.io/?q=unreal-api-mcp)
 [![GitHub Stars](https://img.shields.io/github/stars/Codeturion/unreal-api-mcp)](https://github.com/Codeturion/unreal-api-mcp)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/Codeturion/unreal-api-mcp)](https://github.com/Codeturion/unreal-api-mcp)
-[![License: PolyForm Noncommercial](https://img.shields.io/badge/License-PolyForm%20Noncommercial%201.0.0-blue.svg)](https://polyformproject.org/licenses/noncommercial/1.0.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
 **MCP server that gives AI agents accurate Unreal Engine C++ API documentation. Saves tokens, context, and time — prevents hallucinated signatures, wrong `#include` paths, and deprecated API usage.**
@@ -274,7 +274,7 @@ fuatcankoseoglu@gmail.com
 
 ## License
 
-[PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0/)
+[MIT](https://opensource.org/licenses/MIT)
 
 Free to use, fork, modify, and share for any personal or non-commercial purpose.
 Commercial use requires permission.

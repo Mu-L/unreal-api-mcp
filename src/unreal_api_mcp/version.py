@@ -15,7 +15,7 @@ _CACHE_DIR = Path.home() / ".unreal-api-mcp"
 _GITHUB_RELEASE = (
     "https://github.com/Codeturion/unreal-api-mcp/releases/download/db-v1"
 )
-_DEFAULT_VERSION = "5.7"
+_DEFAULT_VERSION = "5.8"
 _UPDATE_CHECK_TIMEOUT = 3  # seconds
 _DOWNLOAD_TIMEOUT = 60  # seconds per socket operation
 
