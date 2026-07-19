@@ -7,10 +7,11 @@
 [![MCP Registry](https://img.shields.io/badge/MCP-Registry-green)](https://registry.modelcontextprotocol.io/?q=unreal-api-mcp)
 [![GitHub Stars](https://img.shields.io/github/stars/Codeturion/unreal-api-mcp)](https://github.com/Codeturion/unreal-api-mcp)
 [![GitHub Last Commit](https://img.shields.io/github/last-commit/Codeturion/unreal-api-mcp)](https://github.com/Codeturion/unreal-api-mcp)
+[![Detect New UE Release](https://github.com/Codeturion/unreal-api-mcp/actions/workflows/detect-ue-release.yml/badge.svg)](https://github.com/Codeturion/unreal-api-mcp/actions/workflows/detect-ue-release.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-**MCP server that gives AI agents accurate Unreal Engine C++ API documentation. Saves tokens, context, and time — prevents hallucinated signatures, wrong `#include` paths, and deprecated API usage.**
+**MCP server that gives AI agents accurate Unreal Engine C++ API documentation. Saves tokens, context, and time. Prevents hallucinated signatures, wrong `#include` paths, and deprecated API usage.**
 
 Works with Claude Code, Cursor, Windsurf, or any MCP-compatible AI tool. No Unreal Engine installation required. Check the [supported versions](https://github.com/Codeturion/unreal-api-mcp/releases/tag/db-v1). New versions are detected and built automatically every week.
 
@@ -86,23 +87,33 @@ Does **not** cover third-party plugins or marketplace assets. For those, rely on
 
 ## Benchmarks
 
-In a 10-step character movement development workflow, MCP consistently uses far fewer tokens than agents working with grep and file reads:
+Measured, not promised: 14 research questions across 2 testbeds, answered by 3 agent configs, every answer judged against ground truth verified beforehand (API facts against the docs database, source facts against the UE 5.8 engine tree). The full harness lives in [`docs/benchmark/`](docs/benchmark/) and re-runs with one command.
 
-![Total Tokens - 10-Step Development Workflow](https://raw.githubusercontent.com/Codeturion/unreal-api-mcp/master/docs/images/01-total-tokens.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Codeturion/unreal-api-mcp/master/docs/images/benchmark-accuracy-dark.png">
+  <img alt="Answer quality by agent config, judged against verified ground truth" src="https://raw.githubusercontent.com/Codeturion/unreal-api-mcp/master/docs/images/benchmark-accuracy-light.png">
+</picture>
 
-The gap holds across every question type. MCP wins on simple include lookups and complex class references alike:
+| Config | Correct | Partial | Wrong |
+|---|---|---|---|
+| **MCP + targeted Read** | **14/14** | 0 | 0 |
+| Skilled (Grep+Read) | 11/14 | 2 | 1 |
+| Naive (full Reads) | 12/14 | 1 | 1 |
 
-![Hallucination Risk: Grep+Read vs MCP](https://raw.githubusercontent.com/Codeturion/unreal-api-mcp/master/docs/images/04-hallucination.png)
+The gap is not where you would expect. On well-documented includes and signatures, and on grep-able implementation facts inside a 14,000 line engine file, all three configs tie. Modern models know the documented UE surface and search local source competently. The gap opens on recent deprecations. Asked whether `UKismetSystemLibrary::IsSplitScreen` is still valid in 5.8, both non-MCP agents got it wrong: one declined, one asserted it was fine. It is deprecated in favor of `HasMultipleLocalPlayers`. Both also mischaracterized the 5.5-era change that made direct `AActor::NetUpdateFrequency` access deprecated. The MCP agent answered all three deprecation questions correctly, because the deprecation flag and replacement hint are in the database.
 
-Even in a realistic hybrid workflow where MCP results are followed up with targeted file reads, it still uses significantly fewer tokens than a skilled agent working without MCP:
+Why correctness rather than raw output? Agentic tools search code well now. Claude Code has shipped a Grep tool from the start, so an agent can find anything that is actually in your files. The problem is the parts that are not in your files: exact signatures, `#include` paths, and especially fresh deprecations. Those are not reliably in a model's memory either, and getting one wrong costs you a broken build or a silently deprecated call.
 
-![Realistic Workflow: MCP + Targeted Read](https://raw.githubusercontent.com/Codeturion/unreal-api-mcp/master/docs/images/03-hybrid.png)
+<details>
+<summary>Methodology</summary>
 
-"Without MCP" estimates assume full or partial file reads. A skilled agent with good tooling may use fewer tokens than shown. What MCP guarantees is a correct, structured answer in one call every time.
+- 2 testbeds: 8 pure Unreal API lookups (exact signatures, `#include` paths, deprecations) and 6 questions answered inside `CharacterMovementComponent.cpp` (about 14,000 lines) from the UE 5.8 engine source
+- 3 configs, same model (Sonnet) and turn limit: MCP tools + Grep/Read, Grep/Read only, Read only
+- The API sweep runs with no engine source present, the realistic case when writing UE C++ in your own project, so non-MCP configs answer from model memory. The source sweep gives every config the same files to grep
+- Ground truth verified before any runs; answers judged by a separate model session against that ground truth
+- Run it yourself: `python docs/benchmark/run.py --cwd <dir> --questions <file>` (results from July 2026; agent behavior moves, so re-run before quoting). Point it at your own UE project to reproduce the project-research scenario
 
-### Per-question breakdown
-
-![Token Cost Per Question](https://raw.githubusercontent.com/Codeturion/unreal-api-mcp/master/docs/images/02-per-step.png)
+</details>
 
 <details>
 <summary>Query latency</summary>
@@ -117,21 +128,6 @@ Measured on UE 5.7 database (114,724 records), 50 iterations per query:
 | Include path resolution | 2ms | 2ms |
 | Class reference (full member list) | 22ms | 23ms |
 | Deprecation check | 24ms | 25ms |
-
-</details>
-
-<details>
-<summary>Accuracy</summary>
-
-| Test | Result |
-|------|--------|
-| Search top-1 relevance (8 common queries) | 100% |
-| Include path resolution (6 key classes) | 100% |
-| Function signature accuracy (3 common functions) | 100% |
-| Class reference completeness (2 classes) | 100% |
-| Deprecation detection (1 deprecated API) | 100% |
-
-Ranking uses BM25 with tuned column weights (member name 10x, class name 5x) plus core module boosting to ensure `AActor::GetActorLocation` ranks above niche plugin APIs.
 
 </details>
 
@@ -264,7 +260,7 @@ Databases are stored in `~/.unreal-api-mcp/` (downloaded on first run).
 
 ## See Also
 
-**[unity-api-mcp](https://github.com/Codeturion/unity-api-mcp)** — Same concept for Unity (C#). Covers Unity 2022, 2023, and Unity 6.
+**[unity-api-mcp](https://github.com/Codeturion/unity-api-mcp)**: Same concept for Unity (C#). Covers Unity 2022, 2023, and Unity 6.
 
 ## Contact
 

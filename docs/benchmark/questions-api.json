@@ -1,0 +1,66 @@
+[
+  {
+    "id": "api-character-include",
+    "question": "In Unreal Engine 5.8 C++, what is the exact #include needed to reference the ACharacter class?",
+    "difficulty": "api",
+    "ground_truth": "#include \"GameFramework/Character.h\". The header lives under GameFramework, not at the include root.",
+    "evidence": ["unreal_docs_5.8.db api_records include_path"],
+    "unreal_apis": ["ACharacter"]
+  },
+  {
+    "id": "api-fhitresult-include",
+    "question": "In Unreal Engine 5.8, which header must you #include to use the FHitResult struct?",
+    "difficulty": "api",
+    "ground_truth": "#include \"Engine/HitResult.h\". FHitResult was moved to its own header; it is not in Engine/EngineTypes.h.",
+    "evidence": ["unreal_docs_5.8.db api_records include_path"],
+    "unreal_apis": ["FHitResult"]
+  },
+  {
+    "id": "api-navsystem-include",
+    "question": "In Unreal Engine 5.8 C++, what is the correct #include path for the UNavigationSystemV1 class?",
+    "difficulty": "api",
+    "ground_truth": "#include \"NavigationSystem.h\". It is a module-root header, not under GameFramework or AI.",
+    "evidence": ["unreal_docs_5.8.db api_records include_path"],
+    "unreal_apis": ["UNavigationSystemV1"]
+  },
+  {
+    "id": "api-applydamage-signature",
+    "question": "What is the full parameter list, in order, of UGameplayStatics::ApplyDamage in Unreal Engine 5.8, and what does it return?",
+    "difficulty": "api",
+    "ground_truth": "ApplyDamage(AActor* DamagedActor, float BaseDamage, AController* EventInstigator, AActor* DamageCauser, TSubclassOf<UDamageType> DamageTypeClass), returning float (the actual damage applied).",
+    "evidence": ["unreal_docs_5.8.db api_records params_json return_type"],
+    "unreal_apis": ["UGameplayStatics::ApplyDamage"]
+  },
+  {
+    "id": "api-getplayercontroller-signature",
+    "question": "What is the exact signature of UGameplayStatics::GetPlayerController in Unreal Engine 5.8, including parameter types and return type?",
+    "difficulty": "api",
+    "ground_truth": "GetPlayerController(const UObject* WorldContextObject, int32 PlayerIndex), returning APlayerController*. The leading WorldContextObject parameter is commonly forgotten.",
+    "evidence": ["unreal_docs_5.8.db api_records params_json return_type"],
+    "unreal_apis": ["UGameplayStatics::GetPlayerController"]
+  },
+  {
+    "id": "api-attachroot-deprecated",
+    "question": "Is AActor::K2_AttachRootComponentTo still the recommended API in Unreal Engine 5.8? If it is deprecated, what replaces it?",
+    "difficulty": "api",
+    "ground_truth": "K2_AttachRootComponentTo is deprecated in UE 5.8. Use AttachToComponent() instead.",
+    "evidence": ["unreal_docs_5.8.db api_records deprecated=1"],
+    "unreal_apis": ["AActor::K2_AttachRootComponentTo", "AActor::AttachToComponent"]
+  },
+  {
+    "id": "api-netupdatefrequency-deprecated",
+    "question": "In Unreal Engine 5.8, can you read or write AActor::NetUpdateFrequency directly as a public property? If not, what is the correct way?",
+    "difficulty": "api",
+    "ground_truth": "Public access to NetUpdateFrequency is deprecated in UE 5.8. Use SetNetUpdateFrequency() and GetNetUpdateFrequency() instead of touching the field directly.",
+    "evidence": ["unreal_docs_5.8.db api_records deprecated=1"],
+    "unreal_apis": ["AActor::NetUpdateFrequency", "AActor::SetNetUpdateFrequency", "AActor::GetNetUpdateFrequency"]
+  },
+  {
+    "id": "api-issplitscreen-deprecated",
+    "question": "Is UKismetSystemLibrary::IsSplitScreen usable in Unreal Engine 5.8? If it is deprecated, what should be used instead?",
+    "difficulty": "api",
+    "ground_truth": "IsSplitScreen is deprecated in UE 5.8. It only ever checked for more than one local player; use HasMultipleLocalPlayers instead.",
+    "evidence": ["unreal_docs_5.8.db api_records deprecated=1"],
+    "unreal_apis": ["UKismetSystemLibrary::IsSplitScreen", "UKismetSystemLibrary::HasMultipleLocalPlayers"]
+  }
+]

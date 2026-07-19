@@ -1,0 +1,1074 @@
+{
+  "api-character-include": {
+    "mcp": {
+      "answer": "The exact include is `#include \"GameFramework/Character.h\"`, which declares `ACharacter` (a `UCLASS` in the Engine module, a subclass of `APawn` providing mesh, collision, and movement logic). This is the correct header for UE 5.8 C++.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Answer matches ground truth include path and correctly describes ACharacter's location and lineage."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 6510,
+        "cache_read_input_tokens": 81065,
+        "output_tokens": 261,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6510,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 92,
+            "cache_read_input_tokens": 29288,
+            "cache_creation_input_tokens": 183,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 183
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 14883,
+      "context_tokens": 6777,
+      "num_turns": 3,
+      "duration_ms": 7379,
+      "cost_usd": 0.0673125
+    },
+    "skilled": {
+      "answer": "The header is `#include \"GameFramework/Character.h\"`. This has been the exact include path for `ACharacter` since UE4 and remains unchanged through the UE5.x series (including 5.8) \u2014 the class lives in the `Engine` module under `Source/Runtime/Engine/Classes/GameFramework/Character.h`. I don't have local UE 5.8 engine source available in this environment to grep and confirm directly, so this is based on the stable, long-standing Unreal module layout rather than a fresh check of 5.8 sources specifically.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Answer matches ground truth exactly and correctly notes it lacked local source to verify, without fabricating any nonexistent API details."
+      },
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5927,
+        "cache_read_input_tokens": 22961,
+        "output_tokens": 305,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5927,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 305,
+            "cache_read_input_tokens": 22961,
+            "cache_creation_input_tokens": 5927,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5927
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 8530,
+      "context_tokens": 6234,
+      "num_turns": 1,
+      "duration_ms": 4863,
+      "cost_usd": 0.0470313
+    },
+    "naive": {
+      "answer": "`ACharacter` is declared in `GameFramework/Character.h`, so the required include is:\n\n```cpp\n#include \"GameFramework/Character.h\"\n```\n\nThis is unchanged from earlier UE versions in 5.8 \u2014 `ACharacter` (in module `Engine`) derives from `APawn` (`GameFramework/Pawn.h`). I don't have local UE 5.8 engine source in this environment to grep directly, so this is based on Epic's documented, stable module layout (Character.h has lived under `Engine/Source/Runtime/Engine/Classes/GameFramework/` since UE4 and hasn't moved in 5.x); if you want it double-checked against your actual installed engine path, point me at the UE 5.8 source tree and I'll grep it directly.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent correctly identified GameFramework/Character.h and appropriately disclosed it couldn't verify against local source, without inventing any false API details."
+      },
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5583,
+        "cache_read_input_tokens": 22961,
+        "output_tokens": 390,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5583,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 390,
+            "cache_read_input_tokens": 22961,
+            "cache_creation_input_tokens": 5583,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5583
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 8271,
+      "context_tokens": 5975,
+      "num_turns": 1,
+      "duration_ms": 6181,
+      "cost_usd": 0.0462423
+    }
+  },
+  "api-fhitresult-include": {
+    "mcp": {
+      "answer": "To use `FHitResult` in Unreal Engine 5.8, include `Engine/HitResult.h` (`#include \"Engine/HitResult.h\"`). This header lives in the `Engine` module and defines the `USTRUCT` `FHitResult`, which holds trace-hit data such as the impact point and surface normal.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Agent correctly identified Engine/HitResult.h as the required header matching ground truth."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 6474,
+        "cache_read_input_tokens": 81053,
+        "output_tokens": 277,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6474,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 108,
+            "cache_read_input_tokens": 29282,
+            "cache_creation_input_tokens": 153,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 153
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 14862,
+      "context_tokens": 6757,
+      "num_turns": 3,
+      "duration_ms": 6723,
+      "cost_usd": 0.0673329
+    },
+    "skilled": {
+      "answer": "Engine source isn't present locally, so this is from documented UE knowledge (I could not verify against local source).\n\nIn Unreal Engine 5.8, `FHitResult` is declared in `Engine/HitResult.h` (module: Engine, path `Engine/Classes/Engine/HitResult.h`), so the correct include is `#include \"Engine/HitResult.h\"`. It was split out of `EngineTypes.h` several engine versions ago, though `EngineTypes.h` and umbrella headers like `Engine/Engine.h` still transitively pull it in. For precise header-guarantee (per UE's \"include what you use\" convention), `Engine/HitResult.h` is the one to include directly.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Agent correctly identified Engine/HitResult.h as the required include and appropriately flagged its answer as unverified against local source."
+      },
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 5786,
+        "cache_read_input_tokens": 51521,
+        "output_tokens": 538,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5786,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 359,
+            "cache_read_input_tokens": 28560,
+            "cache_creation_input_tokens": 187,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 187
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 11480,
+      "context_tokens": 6328,
+      "num_turns": 2,
+      "duration_ms": 8435,
+      "cost_usd": 0.058254299999999995
+    },
+    "naive": {
+      "answer": "`FHitResult` is defined in **`Engine/HitResult.h`** (module: Engine), e.g. `#include \"Engine/HitResult.h\"`. This struct was split out of the old monolithic `Engine/EngineTypes.h` in earlier UE5 releases and has remained in its own header through 5.8; many gameplay/collision headers (like `CollisionQueryParams.h`, `KismetSystemLibrary.h`) still transitively include it, but for direct usage you should include `Engine/HitResult.h` explicitly rather than relying on transitive includes.\n\nI don't have local UE 5.8 engine source in this environment to grep/verify directly \u2014 this is from my training knowledge of the Unreal Engine source layout, so if precision matters (e.g. for a build-breaking include), verify against your actual `Engine/HitResult.h` in the 5.8 source tree before relying on it.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Agent correctly identified Engine/HitResult.h as the required header and appropriately flagged its answer as unverified against local source."
+      },
+      "usage": {
+        "input_tokens": 2,
+        "cache_creation_input_tokens": 5674,
+        "cache_read_input_tokens": 22961,
+        "output_tokens": 612,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5674,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 612,
+            "cache_read_input_tokens": 22961,
+            "cache_creation_input_tokens": 5674,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 5674
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 8584,
+      "context_tokens": 6288,
+      "num_turns": 1,
+      "duration_ms": 7952,
+      "cost_usd": 0.050118300000000005
+    }
+  },
+  "api-navsystem-include": {
+    "mcp": {
+      "answer": "In UE5.8 C++, `UNavigationSystemV1` requires `#include \"NavigationSystem.h\"`, from the `NavigationSystem` module (declared as `UCLASS`). You'll also need to add `\"NavigationSystem\"` to your module's `PublicDependencyModuleNames` (or `PrivateDependencyModuleNames`) in the `.Build.cs` file to link against it.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent correctly identifies the header as NavigationSystem.h and adds accurate, non-fabricated build.cs guidance."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 6480,
+        "cache_read_input_tokens": 81091,
+        "output_tokens": 330,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6480,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 136,
+            "cache_read_input_tokens": 29311,
+            "cache_creation_input_tokens": 130,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 130
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 14925,
+      "context_tokens": 6816,
+      "num_turns": 3,
+      "duration_ms": 6619,
+      "cost_usd": 0.0681753
+    },
+    "skilled": {
+      "answer": "No Unreal Engine source is present in this environment, so I'm answering from verified knowledge rather than by grepping local headers.\n\n`UNavigationSystemV1` is declared in `NavigationSystem.h` within the **NavigationSystem** module, so the include is:\n\n```cpp\n#include \"NavigationSystem.h\"\n```\n\nBecause this header lives under `Engine/Source/Runtime/NavigationSystem/Public/NavigationSystem.h`, and that module's Public include path is exposed directly (not nested under a subfolder), the bare `\"NavigationSystem.h\"` include works as long as `NavigationSystem` is listed in the module's `PublicDependencyModuleNames` (or `PrivateDependencyModuleNames`) in the `.Build.cs` file. This has been the correct path since UE4.20 when navigation was split out of Engine into its own module, and remains unchanged in 5.8 \u2014 I could not verify against actual 5.8 source since no engine checkout is available in this environment.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Agent correctly identified #include \"NavigationSystem.h\" as the path and appropriately disclosed lack of local verification."
+      },
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6138,
+        "cache_read_input_tokens": 51852,
+        "output_tokens": 531,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6138,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 330,
+            "cache_read_input_tokens": 28891,
+            "cache_creation_input_tokens": 208,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 208
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 11858,
+      "context_tokens": 6673,
+      "num_turns": 2,
+      "duration_ms": 8482,
+      "cost_usd": 0.06036059999999999
+    },
+    "naive": {
+      "answer": "I could not find Unreal Engine source locally to verify this directly (this is an empty working directory with no UE installation), so this is from my training knowledge, not a file I read here.\n\nBased on documented Unreal Engine source layout (unchanged since UE 4.20 through 5.x): `UNavigationSystemV1` is declared in `NavigationSystem/Public/NavigationSystem.h`, so the correct include is:\n\n```cpp\n#include \"NavigationSystem.h\"\n```\n\nThis header lives in the `NavigationSystem` module (module name `NavigationSystem`, so you'd also need `\"NavigationSystem\"` in your `.uproject`/`Build.cs` `PublicDependencyModuleNames`). I was not able to verify this against actual 5.8 source in this environment \u2014 if you have engine source checked out locally, I can grep `class UNavigationSystemV1` there to confirm the exact path for 5.8 specifically.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Agent correctly identified #include \"NavigationSystem.h\" and appropriately disclosed it could not verify locally, matching ground truth."
+      },
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 5848,
+        "cache_read_input_tokens": 51508,
+        "output_tokens": 542,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5848,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 341,
+            "cache_read_input_tokens": 28547,
+            "cache_creation_input_tokens": 262,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 262
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 11544,
+      "context_tokens": 6394,
+      "num_turns": 3,
+      "duration_ms": 8161,
+      "cost_usd": 0.058682399999999996
+    }
+  },
+  "api-applydamage-signature": {
+    "mcp": {
+      "answer": "`UGameplayStatics::ApplyDamage`, declared in `Kismet/GameplayStatics.h` (module Engine):\n\n```cpp\nstatic float ApplyDamage(\n    AActor* DamagedActor,\n    float BaseDamage,\n    AController* EventInstigator,\n    AActor* DamageCauser,\n    TSubclassOf<UDamageType> DamageTypeClass\n);\n```\n\nParameters in order: `DamagedActor` (actor to be damaged), `BaseDamage` (base damage float), `EventInstigator` (controller responsible for the damage, e.g. the shooting player), `DamageCauser` (actor that actually caused the damage, e.g. the grenade), `DamageTypeClass` (`TSubclassOf<UDamageType>` describing the damage type). It returns a `float` \u2014 the actual damage that ended up being applied to the actor. It's a `BlueprintCallable`, `BlueprintAuthorityOnly` function in category `Game|Damage`.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Parameter list, order, and return type match ground truth exactly."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 6594,
+        "cache_read_input_tokens": 80924,
+        "output_tokens": 502,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6594,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 335,
+            "cache_read_input_tokens": 29135,
+            "cache_creation_input_tokens": 420,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 420
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 15194,
+      "context_tokens": 7102,
+      "num_turns": 3,
+      "duration_ms": 7773,
+      "cost_usd": 0.07138919999999999
+    },
+    "skilled": {
+      "answer": "No Unreal Engine source is present in this environment (no local UE installation to grep). I'll answer from documented knowledge instead.\n\n**UGameplayStatics::ApplyDamage** (`Engine/Classes/Kismet/GameplayStatics.h`, implemented in `Engine/Source/Runtime/Engine/Private/GameplayStatics.cpp`), declared as a `UFUNCTION(BlueprintCallable, Category=\"Game\")` static function:\n\n```cpp\nstatic float ApplyDamage(AActor* DamagedActor, float BaseDamage, AController* EventInstigator, AActor* DamageCauser, TSubclassOf<UDamageType> DamageTypeClass);\n```\n\nParameters, in order: `DamagedActor` (the actor to be damaged), `BaseDamage` (amount of damage), `EventInstigator` (the controller responsible for the damage), `DamageCauser` (the actor that directly caused the damage, e.g. a weapon or projectile), and `DamageTypeClass` (a `TSubclassOf<UDamageType>` describing the damage type). It returns a `float` \u2014 the actual amount of damage applied to `DamagedActor` (after modifiers such as `AActor::TakeDamage` / damage-type multipliers), or `0.f` if no damage was applied. This signature has been stable since early UE4 releases and I have no indication it changed in 5.8, but I could not verify against actual 5.8 source since it isn't available in this environment.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Signature, parameter order, and return value match ground truth exactly, with appropriate caveat about not verifying against actual source."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 6836,
+        "cache_read_input_tokens": 80322,
+        "output_tokens": 723,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6836,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 497,
+            "cache_read_input_tokens": 28783,
+            "cache_creation_input_tokens": 1014,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1014
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 15597,
+      "context_tokens": 7565,
+      "num_turns": 3,
+      "duration_ms": 31197,
+      "cost_usd": 0.07597559999999999
+    },
+    "naive": {
+      "answer": "No Unreal Engine source appears to be present on this machine (searches under `/Users/Shared/Epic Games` returned nothing, and broader home-directory globs time out with no UE install found). I don't have shell/internet access in this environment to fetch the header from Epic's repo either.\n\nI can't verify this from local files or tooling available here, so I won't guess. From well-established prior knowledge of the UE4/UE5 API (unchanged since UE4, header `Engine/Source/Runtime/Engine/Classes/Kismet/GameplayStatics.h`, class `UGameplayStatics`), the signature has consistently been:\n\n```cpp\nstatic float ApplyDamage(AActor* DamagedActor, float BaseDamage, AController* EventInstigator, AActor* DamageCauser, TSubclassOf<UDamageType> DamageTypeClass);\n```\n\nreturning a `float` (the actual damage amount applied). However, I cannot confirm this is unchanged in 5.8 specifically without access to the actual 5.8 header \u2014 please point me to a local UE 5.8 engine source checkout (or provide the file) if you need this verified against 5.8 exactly rather than recalled from general UE knowledge.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent transparently disclosed its lack of local verification but still provided the exact correct signature and return type matching ground truth."
+      },
+      "usage": {
+        "input_tokens": 42,
+        "cache_creation_input_tokens": 13800,
+        "cache_read_input_tokens": 176413,
+        "output_tokens": 1290,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 13800,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 398,
+            "cache_read_input_tokens": 36391,
+            "cache_creation_input_tokens": 370,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 370
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 32773,
+      "context_tokens": 15132,
+      "num_turns": 8,
+      "duration_ms": 79999,
+      "cost_usd": 0.1551999
+    }
+  },
+  "api-getplayercontroller-signature": {
+    "mcp": {
+      "answer": "In UE 5.8, the signature is:\n\n```cpp\nstatic APlayerController* UGameplayStatics::GetPlayerController(const UObject* WorldContextObject, int32 PlayerIndex);\n```\n\nIt's declared in `Kismet/GameplayStatics.h` (module: Engine), marked `UFUNCTION(BlueprintPure, Category=\"Game\", meta=(WorldContext=\"WorldContextObject\", UnsafeDuringActorConstruction=\"true\"))`. It iterates local (and, when available, remote) player controllers by index, returning `APlayerController*`; on network clients it only returns local players since remote controllers aren't accessible there.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The signature matches ground truth exactly with correct parameter types, order, and return type."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 6553,
+        "cache_read_input_tokens": 80920,
+        "output_tokens": 386,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6553,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 219,
+            "cache_read_input_tokens": 29133,
+            "cache_creation_input_tokens": 381,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 381
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 15037,
+      "context_tokens": 6945,
+      "num_turns": 3,
+      "duration_ms": 7538,
+      "cost_usd": 0.06940199999999999
+    },
+    "skilled": {
+      "answer": "No local Unreal Engine 5.8 source is present in this environment (empty directory, glob for `GameplayStatics.h` returns nothing), so I cannot grep the actual header.\n\nFrom documented/verified UE API (stable since UE4 through current UE5 releases, unchanged in signature): `UGameplayStatics::GetPlayerController` is declared in `Engine/Source/Runtime/Engine/Classes/Kismet/GameplayStatics.h` as a `BlueprintPure`/`BlueprintCallable` static UFUNCTION with signature:\n\n```cpp\nUFUNCTION(BlueprintPure, Category=\"Game\", meta=(WorldContext=\"WorldContextObject\", UnsafeDuringActorConstruction=\"true\"))\nstatic class APlayerController* GetPlayerController(const UObject* WorldContextObject, int32 PlayerIndex);\n```\n\nI could not directly verify against 5.8 source in this environment (no engine checkout available locally), so I can't confirm 5.8-specific changes (e.g., whether an overload taking `FPlatformUserId` was added, which exists in some 5.x versions as `GetPlayerControllerFromID`/`GetPlayerControllerFromPlatformUser`). If you have the engine source checked out locally, point me at the path and I'll grep the exact 5.8 header to confirm.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Agent gave the correct signature and return type, and honestly disclosed it couldn't verify against local 5.8 source rather than fabricating unverifiable specifics."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 6774,
+        "cache_read_input_tokens": 82019,
+        "output_tokens": 717,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6774,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 451,
+            "cache_read_input_tokens": 29654,
+            "cache_creation_input_tokens": 81,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 81
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 15698,
+      "context_tokens": 7497,
+      "num_turns": 3,
+      "duration_ms": 31018,
+      "cost_usd": 0.0760227
+    },
+    "naive": {
+      "answer": "The working directory is empty \u2014 no Unreal Engine source is present locally, so I cannot verify this by reading files as instructed.\n\nBased on well-established, stable UE API knowledge (unchanged since UE4 through current UE5 versions), the signature in `Runtime/Engine/Classes/Kismet/GameplayStatics.h` is:\n\n```cpp\nUFUNCTION(BlueprintPure, Category=\"Game\", meta=(WorldContext=\"WorldContextObject\"))\nstatic APlayerController* GetPlayerController(const UObject* WorldContextObject, int32 PlayerIndex);\n```\n\nIt's a `static` member of `UGameplayStatics` (in `UGameplayStatics::` scope), returning `APlayerController*`, taking `const UObject* WorldContextObject` and `int32 PlayerIndex`. I could not verify against actual 5.8 source in this environment (no UE installation/files found here) \u2014 if you have a local Unreal Engine source checkout, point me to its path and I'll confirm the exact 5.8 text directly.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent transparently disclosed it could not verify locally but gave the accurate signature matching ground truth, including the correct WorldContextObject parameter and honest caveats."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 6686,
+        "cache_read_input_tokens": 80185,
+        "output_tokens": 520,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6686,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 348,
+            "cache_read_input_tokens": 28670,
+            "cache_creation_input_tokens": 977,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 977
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 15230,
+      "context_tokens": 7212,
+      "num_turns": 3,
+      "duration_ms": 8995,
+      "cost_usd": 0.07198949999999998
+    }
+  },
+  "api-attachroot-deprecated": {
+    "mcp": {
+      "answer": "No, `AActor::K2_AttachRootComponentTo` (in `GameFramework/Actor.h`, `BlueprintCallable`, exposed to Blueprints with `DisplayName = \"AttachRootComponentTo (Deprecated)\"`) is deprecated in UE 5.8. The engine's own metadata states it directly: \"DEPRECATED: Use AttachToComponent() instead.\" The replacement is `USceneComponent::AttachToComponent(USceneComponent* InParent, const FAttachmentTransformRules& AttachmentRules, FName InSocketName = NAME_None)` from `Components/SceneComponent.h`, called on the actor's root component and taking an `FAttachmentTransformRules` struct instead of the old `EAttachLocation::Type` enum. (A sibling function, `AActor::K2_AttachRootComponentToActor`, is likewise deprecated in favor of `AttachToActor()`.)",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Correctly identifies deprecation and points to AttachToComponent as replacement with accurate signature details."
+      },
+      "usage": {
+        "input_tokens": 8,
+        "cache_creation_input_tokens": 8116,
+        "cache_read_input_tokens": 112152,
+        "output_tokens": 736,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 8116,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 317,
+            "cache_read_input_tokens": 30705,
+            "cache_creation_input_tokens": 372,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 372
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 20075,
+      "context_tokens": 8860,
+      "num_turns": 5,
+      "duration_ms": 13556,
+      "cost_usd": 0.09340559999999999
+    },
+    "skilled": {
+      "answer": "No Unreal Engine source is present locally (only past conversation logs matched, no actual engine files). I cannot verify this against UE 5.8 source in this environment.\n\nBased on documented UE knowledge (not verified against 5.8 source in this session): `AActor::K2_AttachRootComponentTo` (the Blueprint node backing \"Attach Actor To Actor\", declared in `Actor.h`, implemented in `Actor.cpp`) was deprecated back in UE 4.17 in favor of `USceneComponent::K2_AttachToComponent(USceneComponent* InParent, FName InSocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies)`, declared in `Components/SceneComponent.h`. I could not confirm whether it was fully removed by 5.8 or still present as a deprecated stub \u2014 flagging that as unverified since I have no engine source to grep here.",
+      "verdict": {
+        "verdict": "partial",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Agent correctly flagged it couldn't verify against source and pointed toward AttachToComponent-family APIs but named USceneComponent::K2_AttachToComponent rather than the ground-truth AActor::AttachToComponent and gave an unverifiable deprecation version."
+      },
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6458,
+        "cache_read_input_tokens": 51543,
+        "output_tokens": 556,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6458,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 332,
+            "cache_read_input_tokens": 28582,
+            "cache_creation_input_tokens": 837,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 837
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 12172,
+      "context_tokens": 7018,
+      "num_turns": 3,
+      "duration_ms": 30397,
+      "cost_usd": 0.0625629
+    },
+    "naive": {
+      "answer": "Confirmed directly in the UE5.8 source.\n\n`AActor::K2_AttachRootComponentTo` is deprecated \u2014 declared in `Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h` (Actor.h:1990-1993) with `UE_DEPRECATED(4.17, \"Use AttachToComponent() instead.\")`, Blueprint display name \"AttachRootComponentTo (Deprecated)\". It is replaced by:\n\n- C++: `bool AActor::AttachToComponent(USceneComponent* Parent, const FAttachmentTransformRules& AttachmentRules, FName SocketName = NAME_None)` (Actor.h:2015)\n- Blueprint node: `bool AActor::K2_AttachToComponent(USceneComponent* Parent, FName SocketName, EAttachmentRule LocationRule, EAttachmentRule RotationRule, EAttachmentRule ScaleRule, bool bWeldSimulatedBodies)` (Actor.h:2005-2006, `DisplayName = \"Attach Actor To Component\"`)\n\nThis deprecation dates back to UE 4.17 and remains unchanged in the 5.8 source checked here, so the old API is still present but should not be used in new code.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Correctly identifies the deprecation and AttachToComponent as the replacement, matching ground truth, with plausible added detail."
+      },
+      "usage": {
+        "input_tokens": 10,
+        "cache_creation_input_tokens": 10310,
+        "cache_read_input_tokens": 142808,
+        "output_tokens": 1368,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 10310,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 426,
+            "cache_read_input_tokens": 31515,
+            "cache_creation_input_tokens": 1756,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1756
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 25968,
+      "context_tokens": 11688,
+      "num_turns": 5,
+      "duration_ms": 45574,
+      "cost_usd": 0.12525239999999999
+    }
+  },
+  "api-netupdatefrequency-deprecated": {
+    "mcp": {
+      "answer": "In UE 5.8, direct public access to `AActor::NetUpdateFrequency` (a `float` UPROPERTY, `Category=Replication`, declared in `GameFramework/Actor.h`) is deprecated \u2014 it now carries `meta=(AllowPrivateAccess=true)` with `BlueprintGetter=GetNetUpdateFrequency`/`BlueprintSetter=SetNetUpdateFrequency`, and the engine explicitly warns \"Public access to NetUpdateFrequency has been deprecated.\" Instead, use the accessor functions: `void AActor::SetNetUpdateFrequency(float Frequency)` to write it and `float AActor::GetNetUpdateFrequency() const` to read it, both declared in `GameFramework/Actor.h`. These are also the functions Blueprint's Get/Set nodes call under the hood via the `BlueprintGetter`/`BlueprintSetter` specifiers.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": true,
+        "hallucination_detail": "Claims specific meta=(AllowPrivateAccess=true) tag and BlueprintGetter/BlueprintSetter specifiers on NetUpdateFrequency, which are unverified fabricated implementation details not confirmed by ground truth",
+        "reason": "Core guidance (property access deprecated, use SetNetUpdateFrequency/GetNetUpdateFrequency) matches ground truth, but the agent invented unverified implementation specifics (meta tags, deprecation warning wording) presented as fact."
+      },
+      "usage": {
+        "input_tokens": 12,
+        "cache_creation_input_tokens": 9518,
+        "cache_read_input_tokens": 173756,
+        "output_tokens": 850,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9518,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 318,
+            "cache_read_input_tokens": 32004,
+            "cache_creation_input_tokens": 475,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 475
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 27755,
+      "context_tokens": 10380,
+      "num_turns": 7,
+      "duration_ms": 16387,
+      "cost_usd": 0.1220208
+    },
+    "skilled": {
+      "answer": "No Unreal Engine source is present in this environment, so I can't grep the actual header \u2014 this answer is from documented API knowledge, not verified against source in this session.\n\n**AActor::NetUpdateFrequency** is a public `UPROPERTY` (`EditDefaultsOnly, BlueprintReadWrite, Category=Replication`, type `float`), declared in `Engine/Classes/GameFramework/Actor.h`, so direct C++ read/write (`Actor->NetUpdateFrequency = 10.f;`) is legal and compiles. However, since UE5, Epic recommends going through the accessors `float AActor::GetNetUpdateFrequency() const` and `void AActor::SetNetUpdateFrequency(float NewNetUpdateFrequency)` instead of writing the field directly at runtime, because `SetNetUpdateFrequency` also notifies the replication driver (e.g. Iris' `FReplicationSystemUtil`/network driver push-model bookkeeping) so the change actually takes effect after the actor has begun play. Direct field writes still work for pre-BeginPlay/default-value setup (e.g. in a constructor or Blueprint defaults), but for changing it on a live, already-replicating actor, use `SetNetUpdateFrequency()`. I could not verify the exact current header line numbers or whether the raw field remains public vs. was moved private in 5.8 specifically \u2014 recommend a quick grep against your local `Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h` to confirm before relying on direct field access.",
+      "verdict": {
+        "verdict": "partial",
+        "hallucinated_api": true,
+        "hallucination_detail": "Iris FReplicationSystemUtil push-model bookkeeping claim tied to SetNetUpdateFrequency",
+        "reason": "Agent correctly recommends the accessors and flags its own uncertainty, but wrongly claims the raw field is still public/legal to write directly in 5.8 when it is actually deprecated, and invents unverified Iris implementation details."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 7415,
+        "cache_read_input_tokens": 80883,
+        "output_tokens": 1361,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7415,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 557,
+            "cache_read_input_tokens": 29343,
+            "cache_creation_input_tokens": 1033,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1033
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 16870,
+      "context_tokens": 8782,
+      "num_turns": 3,
+      "duration_ms": 38121,
+      "cost_usd": 0.0891879
+    },
+    "naive": {
+      "answer": "I don't have Unreal Engine source available in this directory (it's empty \u2014 no `Actor.h` or any UE headers to grep), so I can't verify this against the actual 5.8 source tree. Based on documented UE5 API changes (not locally verified):\n\n`AActor::NetUpdateFrequency` is **not** a public property in modern UE5 \u2014 it was made `private` (with a `UPROPERTY(EditDefaultsOnly, Category=Replication)` still present for editor/serialization) and accessed via generated accessor functions: `float AActor::GetNetUpdateFrequency() const` and `void AActor::SetNetUpdateFrequency(float NewNetUpdateFrequency)`, declared in `GameFramework/Actor.h` (`#include \"GameFramework/Actor.h\"`). So in C++ you should call `Actor->SetNetUpdateFrequency(10.f)` / `Actor->GetNetUpdateFrequency()` rather than touching the field directly; direct member access will fail to compile due to the access specifier.\n\nI could not confirm the exact current UE 5.8 declaration/line since no engine source was present to read in this session \u2014 if precision matters (e.g. exact `UPROPERTY` flags), it's worth grepping your actual `Engine/Source/Runtime/Engine/Classes/GameFramework/Actor.h` for `NetUpdateFrequency` to confirm.",
+      "verdict": {
+        "verdict": "partial",
+        "hallucinated_api": true,
+        "hallucination_detail": "claims NetUpdateFrequency is private causing compile failure, when ground truth says it's deprecated (still public) not private",
+        "reason": "Correctly identifies the accessor functions to use but inaccurately claims the property is private/inaccessible rather than merely deprecated, and hedges heavily due to lack of source access."
+      },
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 5832,
+        "cache_read_input_tokens": 51518,
+        "output_tokens": 1161,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 5832,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 986,
+            "cache_read_input_tokens": 28557,
+            "cache_creation_input_tokens": 236,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 236
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 12148,
+      "context_tokens": 6997,
+      "num_turns": 3,
+      "duration_ms": 14613,
+      "cost_usd": 0.0678744
+    }
+  },
+  "api-issplitscreen-deprecated": {
+    "mcp": {
+      "answer": "`UKismetSystemLibrary::IsSplitScreen` is deprecated in UE 5.8 \u2014 it's marked `DeprecatedFunction` with message \"Use HasMultipleLocalPlayers instead,\" since it only ever checked whether more than one local player existed. Both are declared in `Kismet/KismetSystemLibrary.h` in the Engine module. Use `bool UKismetSystemLibrary::HasMultipleLocalPlayers(const UObject* WorldContextObject)` (`BlueprintPure`, category \"Viewport\") as the direct replacement \u2014 same signature/return type, so it's a drop-in swap in both C++ and Blueprint.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The answer correctly identifies the deprecation and the drop-in replacement with matching rationale, and its stated header/module/signature details are plausible and consistent with known UE conventions."
+      },
+      "usage": {
+        "input_tokens": 8,
+        "cache_creation_input_tokens": 8228,
+        "cache_read_input_tokens": 112393,
+        "output_tokens": 566,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 8228,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 223,
+            "cache_read_input_tokens": 30913,
+            "cache_creation_input_tokens": 276,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 276
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 20041,
+      "context_tokens": 8802,
+      "num_turns": 5,
+      "duration_ms": 11352,
+      "cost_usd": 0.0915999
+    },
+    "skilled": {
+      "answer": "I don't have UE5.8 engine source or web access in this environment (no local Unreal source tree found, and no engine documentation MCP tool is available), so I can't verify this against actual 5.8 source/headers. Based on general Unreal Engine API knowledge, which I cannot confirm for the 5.8 release specifically:\n\n`UKismetSystemLibrary::IsSplitScreen(const UObject* WorldContextObject)` (declared in `Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h`, exposed to Blueprints as a `BlueprintPure` node) has historically not been deprecated through the UE5.x line \u2014 it simply forwards to `UGameViewportClient::IsSplitScreen()`. I do not have a reliable, verified answer for whether that status changed specifically in 5.8, and I don't want to assert deprecation or a replacement API without confirming it in the actual 5.8 header. If you have access to the engine source (e.g., under an Unreal install path or a synced Perforce/Git checkout), point me at it and I can grep `KismetSystemLibrary.h`/`.cpp` directly to give a precise, sourced answer.",
+      "verdict": {
+        "verdict": "wrong",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Agent declined to answer and explicitly failed to identify the deprecation or the correct replacement (HasMultipleLocalPlayers)."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 17149,
+        "cache_read_input_tokens": 80796,
+        "output_tokens": 1144,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 17149,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 793,
+            "cache_read_input_tokens": 29253,
+            "cache_creation_input_tokens": 10857,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 10857
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 26378,
+      "context_tokens": 18299,
+      "num_turns": 3,
+      "duration_ms": 36546,
+      "cost_usd": 0.14431080000000002
+    },
+    "naive": {
+      "answer": "No Unreal Engine source is present in this working directory (empty dir, no `.uproject`, no engine checkout found). I cannot verify this by reading files as instructed.\n\nBased on my training knowledge (not verified against source in this environment): `UKismetSystemLibrary::IsSplitScreen(const UObject* WorldContextObject)` (declared in `Runtime/Engine/Classes/Kismet/KismetSystemLibrary.h`) is **not deprecated** as of UE 5.8 \u2014 it remains a valid `BlueprintPure` function returning whether the game is in split-screen mode, and there is no documented replacement API for it.\n\nI could not verify this directly since no Unreal Engine source tree is accessible in this environment \u2014 if you have a local engine install or can point me to the checkout path, I can grep `KismetSystemLibrary.h` directly to confirm current signature/deprecation status for 5.8.",
+      "verdict": {
+        "verdict": "wrong",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent correctly disclosed it couldn't verify, but its guessed answer (not deprecated, no replacement) directly contradicts the ground truth that IsSplitScreen is deprecated in favor of HasMultipleLocalPlayers."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 6729,
+        "cache_read_input_tokens": 80193,
+        "output_tokens": 487,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6729,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 300,
+            "cache_read_input_tokens": 28672,
+            "cache_creation_input_tokens": 1018,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1018
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 15241,
+      "context_tokens": 7222,
+      "num_turns": 3,
+      "duration_ms": 9569,
+      "cost_usd": 0.0717549
+    }
+  }
+}

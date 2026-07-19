@@ -1,0 +1,806 @@
+{
+  "src-jumpz-default": {
+    "mcp": {
+      "answer": "In `UCharacterMovementComponent::UCharacterMovementComponent(const FObjectInitializer& ObjectInitializer)` in `CharacterMovementComponent.cpp` (line 679), `JumpZVelocity` is initialized to `420.0f`. This is a `UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=\"Character Movement: Jumping / Falling\")` `float` member declared in `CharacterMovementComponent.h` (`#include \"GameFramework/CharacterMovementComponent.h\"`), representing the initial vertical velocity (cm/s) applied when the character jumps.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent correctly stated JumpZVelocity is initialized to 420.0f, matching the ground truth."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 12853,
+        "cache_read_input_tokens": 76077,
+        "output_tokens": 621,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 12853,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 215,
+            "cache_read_input_tokens": 29588,
+            "cache_creation_input_tokens": 795,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 795
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 21087,
+      "context_tokens": 13480,
+      "num_turns": 3,
+      "duration_ms": 9695,
+      "cost_usd": 0.10927409999999999
+    },
+    "skilled": {
+      "answer": "In `UCharacterMovementComponent::UCharacterMovementComponent(const FObjectInitializer& ObjectInitializer)`, in `Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp` (line 679), the constructor initializes `JumpZVelocity = 420.0f;`. `JumpZVelocity` is a public `float` UPROPERTY member of `UCharacterMovementComponent`, declared in `Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h`, representing the initial vertical velocity (cm/s) applied when a character jumps.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Matches ground truth value of 420.0f with plausible correct file/class/property references."
+      },
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6444,
+        "cache_read_input_tokens": 51913,
+        "output_tokens": 527,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6444,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 227,
+            "cache_read_input_tokens": 28818,
+            "cache_creation_input_tokens": 721,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 721
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 12166,
+      "context_tokens": 6975,
+      "num_turns": 2,
+      "duration_ms": 7022,
+      "cost_usd": 0.0621549
+    },
+    "naive": {
+      "answer": "In `UCharacterMovementComponent::UCharacterMovementComponent(const FObjectInitializer& ObjectInitializer)` (`Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp`, line 679), the property `JumpZVelocity` (declared in `CharacterMovementComponent.h`) is initialized to `420.0f`.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent correctly identified JumpZVelocity = 420.0f matching the verified ground truth."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 7428,
+        "cache_read_input_tokens": 80773,
+        "output_tokens": 603,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7428,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 135,
+            "cache_read_input_tokens": 28991,
+            "cache_creation_input_tokens": 1532,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1532
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 16114,
+      "context_tokens": 8037,
+      "num_turns": 3,
+      "duration_ms": 10888,
+      "cost_usd": 0.0778629
+    }
+  },
+  "src-maxwalkspeed-default": {
+    "mcp": {
+      "answer": "In `UCharacterMovementComponent::UCharacterMovementComponent()` (Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp, line 694), the `MaxWalkSpeed` property is initialized to **600.0f**. This is a `float UPROPERTY` declared in `CharacterMovementComponent.h` (`#include \"GameFramework/CharacterMovementComponent.h\"`), representing the max horizontal ground-movement speed in Unreal units/sec; `MaxCustomMovementSpeed` is also set from it in the same constructor.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Correctly states MaxWalkSpeed defaults to 600.0f matching ground truth, with plausible supporting API details."
+      },
+      "usage": {
+        "input_tokens": 10,
+        "cache_creation_input_tokens": 8675,
+        "cache_read_input_tokens": 142123,
+        "output_tokens": 951,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 8675,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 205,
+            "cache_read_input_tokens": 30784,
+            "cache_creation_input_tokens": 986,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 986
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 23848,
+      "context_tokens": 9636,
+      "num_turns": 5,
+      "duration_ms": 14658,
+      "cost_usd": 0.10898189999999999
+    },
+    "skilled": {
+      "answer": "In `UCharacterMovementComponent::UCharacterMovementComponent(const FObjectInitializer& ObjectInitializer)` (`Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp`, line 694), the constructor sets `MaxWalkSpeed = 600.0f;` (a `float` UPROPERTY on `UCharacterMovementComponent`, declared in `CharacterMovementComponent.h`). This is alongside related defaults `MaxFlySpeed = 600.0f` (line 693) and `MaxSwimSpeed = 300.0f` (line 695), with `MaxCustomMovementSpeed` initialized to equal `MaxWalkSpeed`.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent correctly identified MaxWalkSpeed = 600.0f with plausible file location and surrounding context, matching the verified ground truth."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 7632,
+        "cache_read_input_tokens": 80846,
+        "output_tokens": 735,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7632,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 252,
+            "cache_read_input_tokens": 29043,
+            "cache_creation_input_tokens": 1684,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1684
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 16457,
+      "context_tokens": 8373,
+      "num_turns": 3,
+      "duration_ms": 10434,
+      "cost_usd": 0.0810888
+    },
+    "naive": {
+      "answer": "In `UCharacterMovementComponent::UCharacterMovementComponent(const FObjectInitializer& ObjectInitializer)`, defined in `Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp` (line 694), the constructor sets `MaxWalkSpeed = 600.0f;`. This is the `UPROPERTY` `float MaxWalkSpeed` declared in `CharacterMovementComponent.h`. It's set alongside `MaxFlySpeed = 600.0f;` and `MaxSwimSpeed = 300.0f;`, and `MaxCustomMovementSpeed` is initialized to `MaxWalkSpeed` (i.e., also 600.0f) right after.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent correctly identified MaxWalkSpeed = 600.0f in the constructor, matching the verified ground truth."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 7609,
+        "cache_read_input_tokens": 80801,
+        "output_tokens": 738,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7609,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 257,
+            "cache_read_input_tokens": 29020,
+            "cache_creation_input_tokens": 1684,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1684
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 16433,
+      "context_tokens": 8353,
+      "num_turns": 3,
+      "duration_ms": 10162,
+      "cost_usd": 0.0809823
+    }
+  },
+  "src-maxstepheight-default": {
+    "mcp": {
+      "answer": "In UE 5.8, `UCharacterMovementComponent::MaxStepHeight` (a `float` UPROPERTY, `#include \"GameFramework/CharacterMovementComponent.h\"`, `Category=\"Character Movement: Walking\"`, `ClampMin=\"0\"`, `ForceUnits=\"cm\"`) is set to `45.0f` in the constructor at `Private/Components/CharacterMovementComponent.cpp:689`. This represents the maximum height (in cm) a character can step up onto.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent correctly states MaxStepHeight defaults to 45.0f, matching the ground truth, with plausible supporting metadata."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 8193,
+        "cache_read_input_tokens": 81601,
+        "output_tokens": 581,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 8193,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 171,
+            "cache_read_input_tokens": 29547,
+            "cache_creation_input_tokens": 1741,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1741
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 16940,
+      "context_tokens": 8780,
+      "num_turns": 4,
+      "duration_ms": 9884,
+      "cost_usd": 0.08237130000000001
+    },
+    "skilled": {
+      "answer": "In `UCharacterMovementComponent::UCharacterMovementComponent()` (Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp:689), `MaxStepHeight` is initialized to **45.0f** (i.e., 45 cm). This is a `UPROPERTY` float on `UCharacterMovementComponent` (declared in CharacterMovementComponent.h) that governs the maximum height the character can automatically step up onto.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Agent correctly states MaxStepHeight is initialized to 45.0f, matching ground truth."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 7547,
+        "cache_read_input_tokens": 80782,
+        "output_tokens": 638,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7547,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 164,
+            "cache_read_input_tokens": 28978,
+            "cache_creation_input_tokens": 1664,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1664
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 16269,
+      "context_tokens": 8191,
+      "num_turns": 3,
+      "duration_ms": 11236,
+      "cost_usd": 0.0791046
+    },
+    "naive": {
+      "answer": "In `UCharacterMovementComponent::UCharacterMovementComponent(const FObjectInitializer& ObjectInitializer)` in `Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp:689`, the constructor sets `MaxStepHeight = 45.0f;`. This member is declared in `CharacterMovementComponent.h` as `float MaxStepHeight` (UPROPERTY, category Character Movement: Walking), giving characters a default step-up height of 45 units (cm).",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The answer correctly states MaxStepHeight = 45.0f matching the ground truth, with plausible supporting details."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 7848,
+        "cache_read_input_tokens": 81405,
+        "output_tokens": 682,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7848,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 185,
+            "cache_read_input_tokens": 29301,
+            "cache_creation_input_tokens": 1642,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1642
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 16676,
+      "context_tokens": 8536,
+      "num_turns": 3,
+      "duration_ms": 11181,
+      "cost_usd": 0.0817575
+    }
+  },
+  "src-aircontrol-default": {
+    "mcp": {
+      "answer": "Confirmed directly from source: in `UCharacterMovementComponent::UCharacterMovementComponent(const FObjectInitializer& ObjectInitializer)` (Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp, line 729), `AirControl = 0.05f;`. `AirControl` is a public `float` member of `UCharacterMovementComponent` (declared in `Engine/Source/Runtime/Engine/Classes/GameFramework/CharacterMovementComponent.h`, `#include \"GameFramework/CharacterMovementComponent.h\"`) controlling the fraction of `AirControl` steering applied during falling movement.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The answer correctly states AirControl defaults to 0.05f matching ground truth, with plausible file/class references."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 7108,
+        "cache_read_input_tokens": 81627,
+        "output_tokens": 640,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 7108,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 235,
+            "cache_read_input_tokens": 29579,
+            "cache_creation_input_tokens": 624,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 624
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 15916,
+      "context_tokens": 7754,
+      "num_turns": 3,
+      "duration_ms": 10108,
+      "cost_usd": 0.0767541
+    },
+    "skilled": {
+      "answer": "In `UCharacterMovementComponent::UCharacterMovementComponent()` (Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp:729), `AirControl` is initialized to `0.05f`. This is a `float UPROPERTY` member declared in `CharacterMovementComponent.h`, controlling how much lateral control the character has while airborne (used later via `GetAirControl(float DeltaTime, float TickAirControl, const FVector& FallAcceleration)`).",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Correctly states AirControl defaults to 0.05f, matching ground truth, with plausible supporting API references."
+      },
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6229,
+        "cache_read_input_tokens": 51798,
+        "output_tokens": 413,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6229,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 178,
+            "cache_read_input_tokens": 28703,
+            "cache_creation_input_tokens": 621,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 621
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 11825,
+      "context_tokens": 6646,
+      "num_turns": 2,
+      "duration_ms": 9709,
+      "cost_usd": 0.05912039999999999
+    },
+    "naive": {
+      "answer": "In `UCharacterMovementComponent::UCharacterMovementComponent(const FObjectInitializer& ObjectInitializer)` in `Engine/Source/Runtime/Engine/Private/Components/CharacterMovementComponent.cpp:729`, the constructor sets `AirControl = 0.05f;`. `AirControl` is a `float` member declared in `CharacterMovementComponent.h` (class `UCharacterMovementComponent`, in `#include \"GameFramework/CharacterMovementComponent.h\"`), so the default value is 0.05.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent correctly identified AirControl = 0.05f with a plausible file path and signature matching the actual UE source."
+      },
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6218,
+        "cache_read_input_tokens": 51776,
+        "output_tokens": 457,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6218,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 191,
+            "cache_read_input_tokens": 28681,
+            "cache_creation_input_tokens": 632,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 632
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 11856,
+      "context_tokens": 6679,
+      "num_turns": 2,
+      "duration_ms": 7322,
+      "cost_usd": 0.05970779999999999
+    }
+  },
+  "src-min-floor-dist": {
+    "mcp": {
+      "answer": "In `UCharacterMovementComponent` (declared in `Engine/Classes/GameFramework/CharacterMovementComponent.h`, defined in `Private/Components/CharacterMovementComponent.cpp:98`), `static ENGINE_API const float MIN_FLOOR_DIST = 1.9f;`. It represents the minimum acceptable distance the character capsule should float above the floor while walking \u2014 used throughout floor-checking/adjustment logic (e.g. `AdjustFloorHeight`, `FindFloor`) to decide when the capsule is too close to the floor and needs to be pushed back up, working alongside `MAX_FLOOR_DIST` (the corresponding upper bound) to keep the capsule within an acceptable hover range above the ground.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Value 1.9f and description match ground truth; declaration/usage details are plausible and consistent with known UE source structure."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 8355,
+        "cache_read_input_tokens": 82380,
+        "output_tokens": 736,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 8355,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 257,
+            "cache_read_input_tokens": 30434,
+            "cache_creation_input_tokens": 1016,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1016
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 17335,
+      "context_tokens": 9097,
+      "num_turns": 3,
+      "duration_ms": 11367,
+      "cost_usd": 0.08590199999999999
+    },
+    "skilled": {
+      "answer": "`UCharacterMovementComponent::MIN_FLOOR_DIST` is `1.9f`, declared in `Engine/Classes/GameFramework/CharacterMovementComponent.h:2942` as `static ENGINE_API const float MIN_FLOOR_DIST;` and defined in `Private/Components/CharacterMovementComponent.cpp:98`. Per the header comment directly above the declaration, it represents \"the minimum acceptable distance for the Character capsule to float above the floor when walking\" \u2014 used alongside `MAX_FLOOR_DIST` in floor-adjustment logic (e.g. `AdjustFloorHeight()`, `FindFloor`) to decide when the capsule needs to be nudged up or down to stay properly grounded.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Value and meaning match ground truth; file/line details are plausible and consistent with known engine structure though not independently verifiable here."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 9000,
+        "cache_read_input_tokens": 82066,
+        "output_tokens": 699,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 9000,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 256,
+            "cache_read_input_tokens": 30253,
+            "cache_creation_input_tokens": 1842,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1842
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 17911,
+      "context_tokens": 9705,
+      "num_turns": 3,
+      "duration_ms": 12967,
+      "cost_usd": 0.0891228
+    },
+    "naive": {
+      "answer": "`MIN_FLOOR_DIST` is declared as `static ENGINE_API const float MIN_FLOOR_DIST;` in `UCharacterMovementComponent` (`Classes/GameFramework/CharacterMovementComponent.h:2942`) and defined as `1.9f` in `Private/Components/CharacterMovementComponent.cpp:98`. Its header comment states it represents the \"Minimum acceptable distance for Character capsule to float above floor when walking\" \u2014 used throughout floor-checking logic (e.g. `FindFloor`/`AdjustFloorHeight`) to determine whether the capsule is too close to the ground and needs adjustment, working alongside `MAX_FLOOR_DIST` (2.4f) to define the acceptable floor-distance band.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Value (1.9f) and meaning match ground truth, and the cited declaration/definition details are consistent with UE's actual source layout."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 8949,
+        "cache_read_input_tokens": 82060,
+        "output_tokens": 732,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 8949,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 263,
+            "cache_read_input_tokens": 30269,
+            "cache_creation_input_tokens": 1775,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1775
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 17893,
+      "context_tokens": 9687,
+      "num_turns": 3,
+      "duration_ms": 13218,
+      "cost_usd": 0.08931
+    }
+  },
+  "src-brake-to-stop": {
+    "mcp": {
+      "answer": "`UCharacterMovementComponent::BRAKE_TO_STOP_VELOCITY` is `10.f` (a `static const float`), declared in `Classes/GameFramework/CharacterMovementComponent.h:2951` as `static ENGINE_API const float BRAKE_TO_STOP_VELOCITY;` and defined in `Private/Components/CharacterMovementComponent.cpp:100`. It's used in `ApplyVelocityBraking` (and its async counterpart in `CharacterMovementComponentAsync.cpp`) as the velocity-squared threshold (`FMath::Square(BRAKE_TO_STOP_VELOCITY)`) below which braking snaps velocity to zero rather than continuing to decelerate asymptotically.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "Value 10.0f matches ground truth and the described usage/semantics are accurate, though exact file line numbers could not be independently verified."
+      },
+      "usage": {
+        "input_tokens": 6,
+        "cache_creation_input_tokens": 14830,
+        "cache_read_input_tokens": 88921,
+        "output_tokens": 603,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 14830,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 259,
+            "cache_read_input_tokens": 36973,
+            "cache_creation_input_tokens": 952,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 952
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 24331,
+      "context_tokens": 15439,
+      "num_turns": 3,
+      "duration_ms": 9772,
+      "cost_usd": 0.1247193
+    },
+    "skilled": {
+      "answer": "In UE 5.8, `BRAKE_TO_STOP_VELOCITY` is defined as `10.f` (cm/s) \u2014 `Private/Components/CharacterMovementComponent.cpp:100`: `const float UCharacterMovementComponent::BRAKE_TO_STOP_VELOCITY = 10.f;`, declared as `static ENGINE_API const float BRAKE_TO_STOP_VELOCITY;` in `Classes/GameFramework/CharacterMovementComponent.h:2951`. It's used in `UCharacterMovementComponent::ApplyVelocityBraking` (`CharacterMovementComponent.cpp:4423`) as the squared-velocity threshold below which the character is snapped to zero velocity, and in the equivalent async path in `CharacterMovementComponentAsync.cpp:2362`.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The core value (10.0f) matches ground truth; the additional file/line details are plausible and not verifiable as false, so they aren't marked as hallucination absent contrary evidence."
+      },
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6213,
+        "cache_read_input_tokens": 51912,
+        "output_tokens": 440,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6213,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 287,
+            "cache_read_input_tokens": 28817,
+            "cache_creation_input_tokens": 491,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 491
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 11848,
+      "context_tokens": 6657,
+      "num_turns": 2,
+      "duration_ms": 6417,
+      "cost_usd": 0.059463600000000005
+    },
+    "naive": {
+      "answer": "`BRAKE_TO_STOP_VELOCITY` is defined as `10.f` (units/sec) at `Private/Components/CharacterMovementComponent.cpp:100`: `const float UCharacterMovementComponent::BRAKE_TO_STOP_VELOCITY = 10.f;`. It's declared in `Classes/GameFramework/CharacterMovementComponent.h:2951` as `static ENGINE_API const float BRAKE_TO_STOP_VELOCITY;`. It's used in `UCharacterMovementComponent::ApplyVelocityBraking` (CharacterMovementComponent.cpp:4423) and its async counterpart in `CharacterMovementComponentAsync.cpp:2362` as the squared-velocity threshold below which braking snaps velocity to zero.",
+      "verdict": {
+        "verdict": "correct",
+        "hallucinated_api": false,
+        "hallucination_detail": "",
+        "reason": "The agent correctly states BRAKE_TO_STOP_VELOCITY = 10.0f and provides plausible, unverifiable-but-consistent supporting detail on its declaration and usage."
+      },
+      "usage": {
+        "input_tokens": 4,
+        "cache_creation_input_tokens": 6191,
+        "cache_read_input_tokens": 51793,
+        "output_tokens": 525,
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 6191,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 275,
+            "cache_read_input_tokens": 28698,
+            "cache_creation_input_tokens": 588,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 588
+            },
+            "type": "message"
+          }
+        ],
+        "speed": "standard"
+      },
+      "billed_tokens": 11899,
+      "context_tokens": 6720,
+      "num_turns": 2,
+      "duration_ms": 7841,
+      "cost_usd": 0.0605709
+    }
+  }
+}

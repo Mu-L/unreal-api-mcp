@@ -1,0 +1,50 @@
+[
+  {
+    "id": "src-jumpz-default",
+    "question": "In Unreal Engine 5.8, what is the default value of JumpZVelocity set in the UCharacterMovementComponent constructor?",
+    "difficulty": "source",
+    "ground_truth": "420.0 (JumpZVelocity = 420.0f in the constructor).",
+    "evidence": ["Runtime/Engine/Private/Components/CharacterMovementComponent.cpp constructor"],
+    "unreal_apis": ["UCharacterMovementComponent::JumpZVelocity"]
+  },
+  {
+    "id": "src-maxwalkspeed-default",
+    "question": "In Unreal Engine 5.8, what default MaxWalkSpeed does the UCharacterMovementComponent constructor assign?",
+    "difficulty": "source",
+    "ground_truth": "600.0 (MaxWalkSpeed = 600.0f).",
+    "evidence": ["Runtime/Engine/Private/Components/CharacterMovementComponent.cpp constructor"],
+    "unreal_apis": ["UCharacterMovementComponent::MaxWalkSpeed"]
+  },
+  {
+    "id": "src-maxstepheight-default",
+    "question": "In Unreal Engine 5.8, what is the default MaxStepHeight assigned in the UCharacterMovementComponent constructor?",
+    "difficulty": "source",
+    "ground_truth": "45.0 (MaxStepHeight = 45.0f).",
+    "evidence": ["Runtime/Engine/Private/Components/CharacterMovementComponent.cpp constructor"],
+    "unreal_apis": ["UCharacterMovementComponent::MaxStepHeight"]
+  },
+  {
+    "id": "src-aircontrol-default",
+    "question": "In Unreal Engine 5.8, what is the default AirControl value in the UCharacterMovementComponent constructor?",
+    "difficulty": "source",
+    "ground_truth": "0.05 (AirControl = 0.05f).",
+    "evidence": ["Runtime/Engine/Private/Components/CharacterMovementComponent.cpp constructor"],
+    "unreal_apis": ["UCharacterMovementComponent::AirControl"]
+  },
+  {
+    "id": "src-min-floor-dist",
+    "question": "In Unreal Engine 5.8's UCharacterMovementComponent, what is the value of the MIN_FLOOR_DIST constant, and what does it represent?",
+    "difficulty": "source",
+    "ground_truth": "MIN_FLOOR_DIST = 1.9f (Unreal units). It is the minimum distance the capsule is kept from the floor when the character is walking.",
+    "evidence": ["Runtime/Engine/Private/Components/CharacterMovementComponent.cpp"],
+    "unreal_apis": ["UCharacterMovementComponent::MIN_FLOOR_DIST"]
+  },
+  {
+    "id": "src-brake-to-stop",
+    "question": "In Unreal Engine 5.8's UCharacterMovementComponent implementation, what is the value of the BRAKE_TO_STOP_VELOCITY constant?",
+    "difficulty": "source",
+    "ground_truth": "BRAKE_TO_STOP_VELOCITY = 10.0f. Below this speed while braking, the character is snapped to a stop.",
+    "evidence": ["Runtime/Engine/Private/Components/CharacterMovementComponent.cpp"],
+    "unreal_apis": ["UCharacterMovementComponent::BRAKE_TO_STOP_VELOCITY"]
+  }
+]
